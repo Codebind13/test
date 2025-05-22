@@ -1,0 +1,10 @@
+def transform_format_1(input_data):
+    output = []
+    for item in input_data:
+        new_item = {
+            "id": item["deviceId"],
+            "timestamp": iso_to_millis(item["time"]),
+            "reading": item["value"]
+        }
+        output.append(new_item)
+    return output
