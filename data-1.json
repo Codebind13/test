@@ -1,0 +1,6 @@
+from datetime import datetime
+import calendar
+
+def iso_to_millis(iso_str):
+    dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
+    return int(calendar.timegm(dt.utctimetuple()) * 1000)
